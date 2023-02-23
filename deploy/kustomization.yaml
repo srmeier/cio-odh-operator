@@ -12,6 +12,29 @@ replacements:
       fieldPath: metadata.annotations.cio-target-namespace
     targets:
       - select:
-          kind: Service
         fieldPaths:
           - metadata.namespace
+      # - select:
+      #     kind: Service
+      #   fieldPaths:
+      #     - metadata.namespace
+      # - select:
+      #     kind: ServiceAccount
+      #   fieldPaths:
+      #     - metadata.namespace
+      # - select:
+      #     kind: Deployment
+      #   fieldPaths:
+      #     - metadata.namespace
+      # - select:
+      #     kind: ServiceMonitor
+      #   fieldPaths:
+      #     - metadata.namespace
+      # - select:
+      #     kind: Role
+      #   fieldPaths:
+      #     - metadata.namespace
+      # - select:
+      #     kind: RoleBinding
+      #   fieldPaths:
+      #     - metadata.namespace
