@@ -2,20 +2,20 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
-  - ../opendatahub-operator/kustomize/overlays/opendatahub
+  # - ../opendatahub-operator/kustomize/overlays/opendatahub
   - ../data-science-pipelines-operator/config/base
 
-patches:
-- path: opendatahub/1.4.1/manifests/kfdef.apps.kubeflow.org.crd.yaml
-  target:
-    kind: CustomResourceDefinition
-    name: kfdefs.kfdef.apps.kubeflow.org
-    version: v1
+# patches:
+# - path: opendatahub/1.4.1/manifests/kfdef.apps.kubeflow.org.crd.yaml
+#   target:
+#     kind: CustomResourceDefinition
+#     name: kfdefs.kfdef.apps.kubeflow.org
+#     version: v1
 
 replacements:
   - source:
       kind: Deployment
-      name: kubeflow-operator
+      name: data-science-pipelines-operator-controller-manager
       fieldPath: metadata.annotations.cio-target-namespace
     targets:
       - select:
