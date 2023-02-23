@@ -9,7 +9,7 @@ replacements:
   - source:
       kind: Deployment
       name: kubeflow-operator
-      fieldPath: metadata.annotations.team/namespace
+      fieldPath: metadata.annotations.cio-target-namespace
     targets:
       - select:
           kind: Service
