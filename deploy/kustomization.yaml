@@ -3,6 +3,7 @@ kind: Kustomization
 
 bases:
   - ../opendatahub-operator/kustomize/base
+  - ../opendatahub-operator/kustomize/overlays/opendatahub
   - ../data-science-pipelines-operator/config/base
 
 replacements:
