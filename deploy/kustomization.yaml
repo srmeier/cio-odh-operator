@@ -6,7 +6,7 @@ bases:
   - ../data-science-pipelines-operator/config/base
 
 patches:
-- path: ../opendatahub-operator/deploy/olm-catalog/opendatahub/1.4.1/manifests/kfdef.apps.kubeflow.org.crd.yaml
+- path: opendatahub/1.4.1/manifests/kfdef.apps.kubeflow.org.crd.yaml
   target:
     kind: CustomResourceDefinition
     name: kfdefs.kfdef.apps.kubeflow.org
