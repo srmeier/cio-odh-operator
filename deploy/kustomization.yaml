@@ -4,3 +4,14 @@ kind: Kustomization
 bases:
   - ../opendatahub-operator/deploy
   - ../data-science-pipelines-operator/config/base
+
+replacements:
+  - source:
+      kind: Deployment
+      name: kubeflow-operator
+      fieldPath: metadata.annotations.team/namespace
+    targets:
+      - select:
+          kind: Service
+        fieldPaths:
+          - metadata.namespace
